@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak Choudhary - Full Stack Developer & AI Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1a2332 50%, #0f1e2e 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #06b6d4, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav a {
+            color: #cbd5e1;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: #06b6d4;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+        }
+
+        .bg-1 {
+            width: 400px;
+            height: 400px;
+            top: 10%;
+            left: 5%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .bg-2 {
+            width: 300px;
+            height: 300px;
+            bottom: 10%;
+            right: 5%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #06b6d4, #0ea5e9);
+            padding: 3px;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .profile-pic-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e293b, #334155);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+        }
+
+        @keyframes slideInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #06b6d4, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+
+        .btn {
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #06b6d4, #0ea5e9);
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #06b6d4;
+            border: 2px solid #06b6d4;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(6, 182, 212, 0.1);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #e2e8f0;
+            border-bottom: 2px solid #06b6d4;
+            padding-bottom: 1rem;
+            display: inline-block;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-card {
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 1rem;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .skills-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: #06b6d4;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: rgba(30, 41, 59, 0.5);
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            color: #cbd5e1;
+            text-align: center;
+            font-size: 0.95rem;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: rgba(6, 182, 212, 0.05);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.15);
+            border-color: rgba(6, 182, 212, 0.5);
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            color: #06b6d4;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-desc {
+            color: #cbd5e1;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: rgba(6, 182, 212, 0.2);
+            color: #06b6d4;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-links a {
+            color: #06b6d4;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .project-links a:hover {
+            color: #0ea5e9;
+        }
+
+        /* Publications Section */
+        .publications-list {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .publication-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .publication-card:hover {
+            border-color: rgba(6, 182, 212, 0.5);
+        }
+
+        .publication-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        .publication-card h3 {
+            font-size: 1.15rem;
+            color: #e2e8f0;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-meta {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-year {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        .publication-link {
+            color: #06b6d4;
+            text-decoration: none;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            margin-left: 1rem;
+            transition: color 0.3s;
+        }
+
+        .publication-link:hover {
+            color: #0ea5e9;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: rgba(6, 182, 212, 0.05);
+        }
+
+        .contact-text {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 2rem;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .social-card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            color: #cbd5e1;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(6, 182, 212, 0.5);
+            background: rgba(6, 182, 212, 0.1);
+        }
+
+        .social-icon {
+            font-size: 2rem;
+        }
+
+        .social-label {
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(148, 163, 184, 0.2);
+            text-align: center;
+            color: #64748b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav a {
+                margin: 0.5rem 0;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .publication-header {
+                flex-direction: column;
+            }
+
+            .publication-link {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Deepak Choudhary</div>
+        <div style="display: flex; gap: 1.5rem;">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#publications">Publications</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg bg-1"></div>
+        <div class="hero-bg bg-2"></div>
+        <div class="hero-content">
+            <div class="profile-pic">
+                <div class="profile-pic-inner">
+    <img src="myprofile.jpg" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+</div>
+            </div>
+            <h1>Full Stack Developer & AI Engineer</h1>
+            <p class="hero-desc">
+                Building intelligent web applications with React, Node.js, and Machine Learning. Passionate about creating seamless user experiences and solving complex problems.
+            </p>
+            <div class="button-group">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-grid">
+            <div>
+                <p class="about-text">
+                    I'm a passionate Full Stack Developer with expertise in web development, AI/ML, and cloud technologies. With a Master's degree in Computer Applications, I've built scalable applications and implemented cutting-edge machine learning solutions.
+                </p>
+                <p class="about-text">
+                    My journey spans from creating responsive web interfaces to deploying production-grade backend systems. I love solving complex problems and turning ideas into reality through code.
+                </p>
+            </div>
+            <div class="skills-card">
+                <h3>Skills</h3>
+                <div class="skills-grid">
+                    <div class="skill-item">React</div>
+                    <div class="skill-item">Node.js</div>
+                    <div class="skill-item">Python</div>
+                    <div class="skill-item">TensorFlow</div>
+                    <div class="skill-item">MongoDB</div>
+                    <div class="skill-item">AWS</div>
+                    <div class="skill-item">Docker</div>
+                    <div class="skill-item">Git</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Streaming Platform</h3>
+                <p class="project-desc">Real-time video streaming with React, Node.js, and WebRTC</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Tailwind CSS</span>
+                </div>
+                <div class="project-links">
+                    <a href="#">Live Demo →</a>
+                    <a href="#">GitHub →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Movie Recommendation System</h3>
+                <p class="project-desc">ML-powered recommendation engine with 85% accuracy</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">Flask</span>
+                </div>
+                <div class="project-links">
+                    <a href="#">Live Demo →</a>
+                    <a href="#">GitHub →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Employee Directory System</h3>
+                <p class="project-desc">Full-stack directory with advanced search capabilities</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Express.js</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">React</span>
+                </div>
+                <div class="project-links">
+                    <a href="#">Live Demo →</a>
+                    <a href="#">GitHub →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Face Recognition AI</h3>
+                <p class="project-desc">Real-time face detection with mask recognition</p>
+                <div class="tech-tags">
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">OpenCV</span>
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                </div>
+                <div class="project-links">
+                    <a href="#">Live Demo →</a>
+                    <a href="#">GitHub →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <h2>Research & Publications</h2>
+        <div class="publications-list">
+            <div class="publication-card">
+                <div class="publication-header">
+                    <div>
+                        <h3>Deep Learning in Real-time Face Detection</h3>
+                        <p class="publication-meta">International Journal of AI</p>
+                        <p class="publication-year">Published 2024</p>
+                    </div>
+                    <a href="#" class="publication-link">Read Paper →</a>
+                </div>
+            </div>
+
+            <div class="publication-card">
+                <div class="publication-header">
+                    <div>
+                        <h3>Collaborative Filtering: A Comprehensive Review</h3>
+                        <p class="publication-meta">Machine Learning Quarterly</p>
+                        <p class="publication-year">Published 2023</p>
+                    </div>
+                    <a href="#" class="publication-link">Read Paper →</a>
+                </div>
+            </div>
+
+            <div class="publication-card">
+                <div class="publication-header">
+                    <div>
+                        <h3>Scalable Web Architecture Patterns</h3>
+                        <p class="publication-meta">Tech Innovation Review</p>
+                        <p class="publication-year">Published 2023</p>
+                    </div>
+                    <a href="#" class="publication-link">Read Paper →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <p class="contact-text">Let's connect! Feel free to reach out through any of these channels:</p>
+        <div class="social-grid">
+            <a href="mailto:deepakchoudhary262001@gmail.com" class="social-card">
+                <span class="social-icon">📧</span>
+                <span class="social-label">Email</span>
+            </a>
+            <a href="www.linkedin.com/in/deepak-choudhary-8405b6257" target="_blank" class="social-card">
+                <span class="social-icon">💼</span>
+                <span class="social-label">LinkedIn</span>
+            </a>
+            <a href="https://wa.me/919479491950" target="_blank" class="social-card">
+                <span class="social-icon">📱</span>
+                <span class="social-label">WhatsApp</span>
+            </a>
+            <a href="https://scholar.google.com" target="_blank" class="social-card">
+                <span class="social-icon">🎓</span>
+                <span class="social-label">Google Scholar</span>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-card">
+                <span class="social-icon">📸</span>
+                <span class="social-label">Instagram</span>
+            </a>
+        </div>
+        <div class="footer">
+            <p>© 2024 Deepak Choudhary. Built with HTML, CSS & ❤️</p>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add scroll animation to elements
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card, .publication-card, .social-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

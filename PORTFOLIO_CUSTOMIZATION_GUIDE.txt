@@ -1,0 +1,332 @@
+================================================================================
+PORTFOLIO WEBSITE - CUSTOMIZATION GUIDE
+================================================================================
+
+Your portfolio website is ready! This guide will help you customize it with your own content.
+
+================================================================================
+HOW TO USE YOUR PORTFOLIO
+================================================================================
+
+1. DOWNLOAD & OPEN
+   - Download the "portfolio.html" file
+   - Double-click to open in your browser
+   - It will work offline immediately!
+
+2. CUSTOMIZATION STEPS
+   - Edit the file with any text editor (Notepad, VS Code, Sublime Text, etc.)
+   - Find the sections below and replace with your information
+   - Save the file and refresh your browser to see changes
+
+================================================================================
+EASY CUSTOMIZATION (Find & Replace)
+================================================================================
+
+SECTION 1: YOUR NAME & TITLE
+─────────────────────────────
+Find this in the HTML:
+    <div class="logo">Deepak Choudhary</div>
+
+Replace "Deepak Choudhary" with YOUR NAME
+
+---
+
+Find this in the HTML:
+    <h1>Full Stack Developer & AI Engineer</h1>
+
+Replace with YOUR JOB TITLE/SPECIALTY
+
+---
+
+Find this in the HTML:
+    <p class="hero-desc">
+        Building intelligent web applications with React, Node.js, and 
+        Machine Learning. Passionate about creating seamless user 
+        experiences and solving complex problems.
+    </p>
+
+Replace with YOUR PROFESSIONAL DESCRIPTION
+
+================================================================================
+
+SECTION 2: PROFILE PICTURE
+──────────────────────────
+Find this in the HTML:
+    <div class="profile-pic-inner">👨‍💻</div>
+
+Replace 👨‍💻 with ANY EMOJI you like, or replace with:
+    <img src="your-photo.jpg" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+
+Then place your photo file in the same folder as the HTML file.
+
+================================================================================
+
+SECTION 3: ABOUT ME
+───────────────────
+Find this in the HTML:
+    <p class="about-text">
+        I'm a passionate Full Stack Developer with expertise in web 
+        development, AI/ML, and cloud technologies...
+    </p>
+
+Replace with YOUR BIO (you can have multiple paragraphs)
+
+---
+
+Find the SKILLS section:
+    <div class="skill-item">React</div>
+    <div class="skill-item">Node.js</div>
+    <div class="skill-item">Python</div>
+    etc.
+
+Replace these skills with YOUR TECHNICAL SKILLS
+
+================================================================================
+
+SECTION 4: ADD/EDIT PROJECTS
+─────────────────────────────
+Find the project card for "Streaming Platform":
+
+    <div class="project-card">
+        <h3>Streaming Platform</h3>
+        <p class="project-desc">Real-time video streaming with React, 
+        Node.js, and WebRTC</p>
+        <div class="tech-tags">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+        </div>
+        <div class="project-links">
+            <a href="#">Live Demo →</a>
+            <a href="#">GitHub →</a>
+        </div>
+    </div>
+
+TO CUSTOMIZE:
+1. Change the project title (h3)
+2. Change the description (p class="project-desc")
+3. Update the tech tags with technologies used
+4. Replace the "#" links with your actual project URLs
+
+TO ADD MORE PROJECTS:
+Copy the entire project-card div and paste it again, then customize.
+
+TO REMOVE A PROJECT:
+Delete the entire project-card div section.
+
+================================================================================
+
+SECTION 5: ADD/EDIT RESEARCH PAPERS
+─────────────────────────────────────
+Find the publication card:
+
+    <div class="publication-card">
+        <div class="publication-header">
+            <div>
+                <h3>Deep Learning in Real-time Face Detection</h3>
+                <p class="publication-meta">International Journal of AI</p>
+                <p class="publication-year">Published 2024</p>
+            </div>
+            <a href="#" class="publication-link">Read Paper →</a>
+        </div>
+    </div>
+
+TO CUSTOMIZE:
+1. Change the paper title (h3)
+2. Change the journal name (publication-meta)
+3. Change the year (publication-year)
+4. Replace "#" with the link to your paper (Google Scholar, ResearchGate, etc.)
+
+TO ADD MORE PAPERS:
+Copy the entire publication-card div and paste it, then customize.
+
+================================================================================
+
+SECTION 6: UPDATE CONTACT INFORMATION
+──────────────────────────────────────
+Find the social cards section:
+
+    <a href="mailto:deepakchoudhary262001@gmail.com" class="social-card">
+        <span class="social-icon">📧</span>
+        <span class="social-label">Email</span>
+    </a>
+
+EMAIL:
+    Replace "deepakchoudhary262001@gmail.com" with YOUR EMAIL
+
+LINKEDIN:
+    Replace "https://linkedin.com/in/deepakchoudhary26208" 
+    with YOUR LINKEDIN PROFILE URL
+
+WHATSAPP:
+    Replace "919479491950" with YOUR PHONE NUMBER
+    Format: https://wa.me/COUNTRYCODENUMBER (without + or -)
+
+GOOGLE SCHOLAR:
+    Replace "https://scholar.google.com" with YOUR SCHOLAR PROFILE
+    Example: https://scholar.google.com/citations?user=YOUR_ID
+
+INSTAGRAM:
+    Replace "https://instagram.com" with YOUR INSTAGRAM PROFILE URL
+    Example: https://instagram.com/yourusername
+
+================================================================================
+
+SECTION 7: CHANGE COLORS (OPTIONAL)
+────────────────────────────────────
+
+The website uses a color scheme based on:
+- Primary Color: #06b6d4 (Cyan)
+- Secondary: #0ea5e9 (Sky Blue)
+- Background: Dark blue gradient
+
+TO CHANGE COLORS, find these in the <style> section and replace:
+    #06b6d4  → Your primary color hex code
+    #0ea5e9  → Your secondary color hex code
+
+Color Resources:
+    - Coolors.co (generate color palettes)
+    - Adobe Color Wheel
+    - Material Design Colors
+
+================================================================================
+
+SECTION 8: UPDATE FOOTER
+─────────────────────────
+Find this at the bottom:
+    <p>© 2024 Deepak Choudhary. Built with HTML, CSS & ❤️</p>
+
+Replace "2024" with current year and "Deepak Choudhary" with YOUR NAME
+
+================================================================================
+
+ADVANCED CUSTOMIZATION
+================================================================================
+
+ADDING A NEW SECTION
+────────────────────
+Copy this template and insert it where you want:
+
+    <section id="newsection">
+        <h2>Section Title</h2>
+        <p>Your content here</p>
+    </section>
+
+Then add a navigation link in the nav:
+    <a href="#newsection">Section Title</a>
+
+---
+
+CHANGING FONTS
+──────────────
+Find this in the <style> section:
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+
+Replace with any font you like (common options):
+    - 'Arial', sans-serif
+    - 'Georgia', serif
+    - 'Courier New', monospace
+    - 'Trebuchet MS', sans-serif
+
+---
+
+ADDING YOUR LOGO/IMAGE
+──────────────────────
+1. Save your image file in the same folder as portfolio.html
+2. Find any section and add:
+    <img src="image-name.jpg" style="max-width: 100%; height: auto;">
+
+---
+
+INCREASING/DECREASING TEXT SIZE
+────────────────────────────────
+Find in <style> section:
+    h1 { font-size: 3.5rem; }
+
+Increase number for larger, decrease for smaller
+(rem = relative size, 1rem is base)
+
+================================================================================
+
+DEPLOYMENT OPTIONS
+================================================================================
+
+1. NETLIFY (FREE, EASIEST)
+   - Go to netlify.com
+   - Drag and drop portfolio.html
+   - Get a free live URL
+   - Can share with anyone
+
+2. GITHUB PAGES (FREE)
+   - Create GitHub account
+   - Create new repository named "your-username.github.io"
+   - Upload portfolio.html
+   - Access at https://your-username.github.io
+
+3. VERCEL (FREE)
+   - Go to vercel.com
+   - Import your GitHub repo or drag your HTML file
+   - Instant live URL
+
+4. SHARED HOSTING/DOMAIN
+   - Buy domain and hosting from GoDaddy, Bluehost, etc.
+   - Upload portfolio.html via FTP
+   - Access from your custom domain
+
+================================================================================
+
+TIPS & BEST PRACTICES
+================================================================================
+
+✓ Always keep a backup of your original HTML file
+✓ Test all links before sharing your portfolio
+✓ Ensure contact information is up-to-date
+✓ Update projects and publications regularly
+✓ Use high-quality project descriptions
+✓ Include actual links to your work (GitHub, live demos)
+✓ Test on mobile devices (resize browser window)
+✓ Use descriptive page titles for projects
+
+================================================================================
+
+TROUBLESHOOTING
+================================================================================
+
+LINKS NOT WORKING?
+   - Make sure URL starts with https://
+   - Test the link by opening it separately
+   - For email, use: mailto:your-email@example.com
+   - For WhatsApp, format: https://wa.me/PHONENUMBER
+
+IMAGES NOT SHOWING?
+   - Make sure image is in same folder as HTML
+   - Use correct filename (case-sensitive on servers)
+   - Try absolute URL if relative path doesn't work
+
+STYLING LOOKS BROKEN?
+   - Make sure you didn't delete any <style> tags
+   - Clear browser cache (Ctrl+Shift+Delete)
+   - Try opening in different browser
+
+ANIMATIONS NOT WORKING?
+   - Make sure <script> tags are at bottom of file
+   - Check browser console for errors (F12)
+   - Most modern browsers support all animations
+
+================================================================================
+
+NEED HELP?
+================================================================================
+
+1. Check the HTML comments (<!-- -->) in the file
+2. Look for similar elements and copy their structure
+3. Test small changes one at a time
+4. Use browser's Inspect Tool (F12) to debug
+5. Search CSS/HTML terms online for more examples
+
+================================================================================
+
+Your portfolio is production-ready and looks professional!
+Customize it with your information and start sharing it today. 🚀
+
+================================================================================
